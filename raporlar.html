@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxTravel | Raporlar</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="admin-panel">
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="admin-logo">
+                <img src="../images/logo-white.png" alt="LuxTravel Admin">
+                <span>LuxTravel</span>
+            </a>
+        </div>
+        
+        <nav class="admin-menu">
+            <ul>
+                <li>
+                    <a href="index.html">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="raporlar.html" class="active">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Raporlar</span>
+                    </a>
+                </li>
+                <!-- Diğer menü öğeleri -->
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="admin-main">
+        <!-- Top Navigation -->
+        <header class="admin-header">
+            <div class="header-left">
+                <button class="sidebar-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1>Raporlar</h1>
+            </div>
+            
+            <div class="header-right">
+                <div class="date-range">
+                    <input type="date" id="start-date">
+                    <span>ile</span>
+                    <input type="date" id="end-date">
+                    <button class="btn btn-primary">
+                        <i class="fas fa-filter"></i> Filtrele
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Page Content -->
+        <main class="admin-content">
+            <div class="container-fluid">
+                <!-- Report Tabs -->
+                <div class="report-tabs">
+                    <button class="tab-btn active" data-tab="sales">Satış Raporları</button>
+                    <button class="tab-btn" data-tab="trips">Sefer Raporları</button>
+                    <button class="tab-btn" data-tab="users">Kullanıcı Raporları</button>
+                    <button class="tab-btn" data-tab="financial">Finansal Raporlar</button>
+                </div>
+                
+                <!-- Sales Report -->
+                <div class="admin-card active" id="sales-report">
+                    <div class="card-header">
+                        <h2>Satış Raporları</h2>
+                        <button class="btn btn-primary">
+                            <i class="fas fa-download"></i> Raporu İndir
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-row">
+                            <div class="chart-container">
+                                <canvas id="salesChart"></canvas>
+                            </div>
+                            <div class="chart-summary">
+                                <div class="summary-card">
+                                    <h3>Toplam Satış</h3>
+                                    <p class="amount">₺245,678</p>
+                                    <p class="change up">
+                                        <i class="fas fa-arrow-up"></i> 12% geçen aya göre
+                                    </p>
+                                </div>
+                                <div class="summary-card">
+                                    <h3>Toplam Rezervasyon</h3>
+                                    <p class="amount">1,245</p>
+                                    <p class="change up">
+                                        <i class="fas fa-arrow-up"></i> 8% geçen aya göre
+                                    </p>
+                                </div>
+                                <div class="summary-card">
+                                    <h3>Ortalama Bilet Fiyatı</h3>
+                                    <p class="amount">₺197</p>
+                                    <p class="change down">
+                                        <i class="fas fa-arrow-down"></i> 3% geçen aya göre
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="table-responsive">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Rota</th>
+                                        <th>Rezervasyon Sayısı</th>
+                                        <th>Toplam Tutar</th>
+                                        <th>Doluluk Oranı</th>
+                                        <th>Ortalama Fiyat</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>İstanbul → Ankara</td>
+                                        <td>456</td>
+                                        <td>₺114,000</td>
+                                        <td>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-success" style="width: 85%"></div>
+                                            </div>
+                                            <span>85%</span>
+                                        </td>
+                                        <td>₺250</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ankara → İzmir</td>
+                                        <td>342</td>
+                                        <td>₺71,820</td>
+                                        <td>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-success" style="width: 78%"></div>
+                                            </div>
+                                            <span>78%</span>
+                                        </td>
+                                        <td>₺210</td>
+                                    </tr>
+                                    <tr>
+                                        <td>İzmir → Antalya</td>
+                                        <td>287</td>
+                                        <td>₺51,660</td>
+                                        <td>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-warning" style="width: 65%"></div>
+                                            </div>
+                                            <span>65%</span>
+                                        </td>
+                                        <td>₺180</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Trips Report -->
+                <div class="admin-card" id="trips-report">
+                    <div class="card-header">
+                        <h2>Sefer Raporları</h2>
+                        <button class="btn btn-primary">
+                            <i class="fas fa-download"></i> Raporu İndir
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-container">
+                            <canvas id="tripsChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Users Report -->
+                <div class="admin-card" id="users-report">
+                    <div class="card-header">
+                        <h2>Kullanıcı Raporları</h2>
+                        <button class="btn btn-primary">
+                            <i class="fas fa-download"></i> Raporu İndir
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-container">
+                            <canvas id="usersChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="admin.js"></script>
+    <script>
+        // Report Tabs
+        const reportTabs = document.querySelectorAll('.report-tabs .tab-btn');
+        reportTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                const tabId = this.dataset.tab;
+                
+                // Update active tab
+                reportTabs.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Show active report
+                document.querySelectorAll('.admin-card').forEach(card => {
+                    card.classList.remove('active');
+                });
+                document.getElementById(`${tabId}-report`).classList.add('active');
+            });
+        });
+        
+        // Sales Chart
+        const salesCtx = document.getElementById('salesChart').getContext('2d');
+        const salesChart = new Chart(salesCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'],
+                datasets: [{
+                    label: 'Toplam Satış (₺)',
+                    data: [18500, 19200, 21000, 19800, 23000, 24500, 26500, 27800, 25200, 26800, 28500, 31200],
+                    backgroundColor: 'rgba(52, 152, 219, 0.7)',
+                    borderColor: 'rgba(52, 152, 219, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        
+        // Trips Chart
+        const tripsCtx = document.getElementById('tripsChart').getContext('2d');
+        const tripsChart = new Chart(tripsCtx, {
+            type: 'line',
+            data: {
+                labels: ['Pzt', 'Sal', 'Çar', 'Per', 'Cum', 'Cmt', 'Paz'],
+                datasets: [{
+                    label: 'Sefer Sayısı',
+                    data: [12, 15, 14, 16, 18, 22, 20],
+                    borderColor: 'rgba(46, 204, 113, 1)',
+                    backgroundColor: 'rgba(46, 204, 113, 0.1)',
+                    borderWidth: 2,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        
+        // Users Chart
+        const usersCtx = document.getElementById('usersChart').getContext('2d');
+        const usersChart = new Chart(usersCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Yeni Kayıtlar', 'Aktif Kullanıcılar', 'Pasif Kullanıcılar'],
+                datasets: [{
+                    data: [350, 1200, 150],
+                    backgroundColor: [
+                        'rgba(52, 152, 219, 0.7)',
+                        'rgba(46, 204, 113, 0.7)',
+                        'rgba(231, 76, 60, 0.7)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'right',
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

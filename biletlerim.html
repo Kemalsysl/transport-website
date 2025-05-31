@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LuxTravel biletlerim - Geçmiş ve aktif biletlerinizi görüntüleyin.">
+    <title>LuxTravel | Biletlerim</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="LuxTravel Logo">
+                    <span>LuxTravel</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="seferler.html">Seferler</a></li>
+                    <li><a href="biletlerim.html" class="active">Biletlerim</a></li>
+                    <li class="auth-links">
+                        <a href="profil.html" class="btn btn-outline">
+                            <i class="far fa-user"></i> Profilim
+                        </a>
+                        <button class="btn btn-primary" id="logout-btn">
+                            <i class="fas fa-sign-out-alt"></i> Çıkış Yap
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main class="tickets-page">
+        <div class="container">
+            <div class="page-header">
+                <h1>Biletlerim</h1>
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="active">Aktif Biletler</button>
+                    <button class="tab-btn" data-tab="past">Geçmiş Biletler</button>
+                    <button class="tab-btn" data-tab="cancelled">İptal Edilenler</button>
+                </div>
+            </div>
+
+            <div class="tab-content active" id="active">
+                <div class="ticket-card">
+                    <div class="ticket-header">
+                        <div class="ticket-info">
+                            <span class="ticket-number">LT-20231215-123456</span>
+                            <span class="ticket-date">15 Aralık 2023</span>
+                        </div>
+                        <div class="ticket-status active">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Onaylandı</span>
+                        </div>
+                    </div>
+                    <div class="ticket-body">
+                        <div class="trip-info">
+                            <div class="route">
+                                <div class="from">
+                                    <span class="city">İstanbul</span>
+                                    <span class="station">Esenler Otogarı</span>
+                                    <span class="time">08:00</span>
+                                </div>
+                                <div class="duration">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>4 saat 30 dakika</span>
+                                </div>
+                                <div class="to">
+                                    <span class="city">Ankara</span>
+                                    <span class="station">AŞTİ</span>
+                                    <span class="time">12:30</span>
+                                </div>
+                            </div>
+                            <div class="bus-info">
+                                <span><i class="fas fa-bus"></i> LuxTravel VIP - 34 ABC 123</span>
+                            </div>
+                        </div>
+                        <div class="passenger-info">
+                            <div class="passenger-count">
+                                <i class="fas fa-users"></i>
+                                <span>3 Yolcu</span>
+                            </div>
+                            <div class="seats">
+                                <i class="fas fa-chair"></i>
+                                <span>14, 15, 16</span>
+                            </div>
+                        </div>
+                        <div class="price-info">
+                            <span class="total">₺765</span>
+                            <span class="payment-method">
+                                <i class="fab fa-cc-visa"></i> Visa •••• 1234
+                            </span>
+                        </div>
+                    </div>
+                    <div class="ticket-footer">
+                        <button class="btn btn-outline">
+                            <i class="fas fa-print"></i> Yazdır
+                        </button>
+                        <button class="btn btn-outline">
+                            <i class="fas fa-envelope"></i> E-posta Gönder
+                        </button>
+                        <button class="btn btn-danger">
+                            <i class="fas fa-times"></i> İptal Et
+                        </button>
+                    </div>
+                </div>
+
+                <div class="ticket-card">
+                    <div class="ticket-header">
+                        <div class="ticket-info">
+                            <span class="ticket-number">LT-20231220-789012</span>
+                            <span class="ticket-date">20 Aralık 2023</span>
+                        </div>
+                        <div class="ticket-status warning">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <span>Ödeme Bekliyor</span>
+                        </div>
+                    </div>
+                    <div class="ticket-body">
+                        <div class="trip-info">
+                            <div class="route">
+                                <div class="from">
+                                    <span class="city">Ankara</span>
+                                    <span class="station">AŞTİ</span>
+                                    <span class="time">18:00</span>
+                                </div>
+                                <div class="duration">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>5 saat</span>
+                                </div>
+                                <div class="to">
+                                    <span class="city">İzmir</span>
+                                    <span class="station">İzmir Otogarı</span>
+                                    <span class="time">23:00</span>
+                                </div>
+                            </div>
+                            <div class="bus-info">
+                                <span><i class="fas fa-bus"></i> LuxTravel Lüks - 06 DEF 456</span>
+                            </div>
+                        </div>
+                        <div class="passenger-info">
+                            <div class="passenger-count">
+                                <i class="fas fa-users"></i>
+                                <span>2 Yolcu</span>
+                            </div>
+                            <div class="seats">
+                                <i class="fas fa-chair"></i>
+                                <span>8, 9</span>
+                            </div>
+                        </div>
+                        <div class="price-info">
+                            <span class="total">₺420</span>
+                            <span class="payment-method">
+                                <i class="fas fa-university"></i> Banka Havalesi
+                            </span>
+                        </div>
+                    </div>
+                    <div class="ticket-footer">
+                        <button class="btn btn-primary">
+                            <i class="fas fa-credit-card"></i> Ödemeyi Tamamla
+                        </button>
+                        <button class="btn btn-danger">
+                            <i class="fas fa-times"></i> İptal Et
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="past">
+                <div class="no-tickets">
+                    <i class="far fa-calendar-check"></i>
+                    <h3>Geçmiş Bilet Bulunamadı</h3>
+                    <p>Tamamlanan seferleriniz burada görüntülenecektir.</p>
+                    <a href="seferler.html" class="btn btn-primary">Yeni Bilet Al</a>
+                </div>
+            </div>
+
+            <div class="tab-content" id="cancelled">
+                <div class="no-tickets">
+                    <i class="far fa-calendar-times"></i>
+                    <h3>İptal Edilen Bilet Bulunamadı</h3>
+                    <p>İptal ettiğiniz biletleriniz burada görüntülenecektir.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>LuxTravel</h3>
+                    <p>Konforlu ve güvenli seyahat deneyimi için en iyi tercihiniz.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Hızlı Linkler</h3>
+                    <ul>
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="seferler.html">Seferler</a></li>
+                        <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                        <li><a href="iletisim.html">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>İletişim</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Cumhuriyet Mah. No:123, İstanbul</li>
+                        <li><i class="fas fa-phone"></i> 0850 123 45 67</li>
+                        <li><i class="fas fa-envelope"></i> info@luxtravel.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> LuxTravel. Tüm hakları saklıdır.</p>
+                <div class="footer-links">
+                    <a href="#">Gizlilik Politikası</a>
+                    <a href="#">Kullanım Şartları</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+z
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/tickets.js"></script>
+</body>
+</html>

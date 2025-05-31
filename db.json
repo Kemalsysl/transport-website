@@ -1,0 +1,28 @@
+{
+  "trips": [
+    {
+      "id": 1,
+      "from": "istanbul",
+      "to": "ankara",
+      "date": "2023-12-15",
+      "departure": "08:00",
+      "arrival": "12:00",
+      "price": 250,
+      "seats": 16,
+      "available": 10
+    },
+    {
+      "id": 2,
+      "from": "istanbul",
+      "to": "izmir",
+      "date": "2023-12-15",
+      "departure": "09:30",
+      "arrival": "14:00",
+      "price": 300,
+      "seats": 16,
+      "available": 5
+    }
+  ],
+  "bookings": [],
+  "users": []
+}

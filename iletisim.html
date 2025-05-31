@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anadolu Transport - İletişim</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Anadolu Transport</h1>
+        </div>
+        <nav>
+    <ul>
+        <li><a href="index.html">Ana Sayfa</a></li>
+        <li><a href="seferler.html">Seferler</a></li>
+        <li><a href="hakkimizda.html">Hakkımızda</a></li>
+        <li><a href="iletisim.html">İletişim</a></li>
+        <li class="auth-link">
+            <a href="giris.html">Giriş Yap</a>
+            <a href="kayit.html">Kayıt Ol</a>
+        </li>
+    </ul>
+</nav>
+    </header>
+
+    <main>
+        <section class="contact-section">
+            <h2>Bize Ulaşın</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>İletişim Bilgileri</h3>
+                    <ul>
+                        <li><strong>Adres:</strong> 1234 Taşımacılık Caddesi, İstanbul</li>
+                        <li><strong>Telefon:</strong> <a href="tel:+905551234567">0555 123 45 67</a></li>
+                        <li><strong>E-posta:</strong> <a href="mailto:info@anadolutransport.com">info@anadolutransport.com</a></li>
+                        <li><strong>Çalışma Saatleri:</strong> 08:00 - 20:00 (Her gün)</li>
+                    </ul>
+
+                    <div class="social-media">
+                        <h3>Sosyal Medya</h3>
+                        <div class="social-icons">
+                            <a href="#" target="_blank" class="social-icon"><img src="assets/images/facebook.png" alt="Facebook"></a>
+                            <a href="#" target="_blank" class="social-icon"><img src="assets/images/twitter.png" alt="Twitter"></a>
+                            <a href="#" target="_blank" class="social-icon"><img src="assets/images/instagram.png" alt="Instagram"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Mesaj Gönderin</h3>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="contact-name" placeholder="Adınız Soyadınız" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="contact-email" placeholder="E-posta Adresiniz" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="contact-subject" placeholder="Konu">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="contact-message" placeholder="Mesajınız" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Gönder</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="map-section">
+            <h3>Haritada Bulun</h3>
+            <div class="map-container">
+                <!-- Google Maps embed kodu -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.279637145691!2d28.978858315411632!3d41.00826497929948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab9eb9d587135%3A0x8aa0bb6b1dd6ffb7!2sGalata%20Kulesi!5e0!3m2!1str!2str!4v1623251234567!5m2!1str!2str" 
+                        width="100%" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                </iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Anadolu Transport</p>
+    </footer>
+
+    <script src="assets/js/contact.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LuxTravel şifre sıfırlama - Şifrenizi sıfırlamak için e-posta adresinizi girin.">
+    <title>LuxTravel | Şifremi Unuttum</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="auth-page">
+    <header class="auth-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="LuxTravel Logo">
+                    <span>LuxTravel</span>
+                </a>
+            </div>
+            <div class="auth-switch">
+                <a href="giris.html">Giriş Yap</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="auth-main">
+        <div class="container">
+            <div class="auth-card">
+                <h1>Şifremi Unuttum</h1>
+                <p>Şifrenizi sıfırlamak için kayıtlı e-posta adresinizi giriniz.</p>
+                
+                <form id="reset-password-form">
+                    <div class="form-group">
+                        <label for="reset-email">E-posta Adresi</label>
+                        <input type="email" id="reset-email" placeholder="ornek@email.com" required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-block">Şifre Sıfırlama Bağlantısı Gönder</button>
+                    
+                    <div class="auth-note">
+                        <p>E-posta adresinize bir şifre sıfırlama bağlantısı göndereceğiz. Bağlantıyı tıklayarak yeni bir şifre oluşturabilirsiniz.</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="auth-footer">
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> LuxTravel. Tüm hakları saklıdır.</p>
+            <div class="footer-links">
+                <a href="#">Gizlilik Politikası</a>
+                <a href="#">Kullanım Şartları</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LuxTravel bilet onayı - Rezervasyonunuz başarıyla tamamlandı. Bilet detaylarınız aşağıda yer almaktadır.">
+    <title>LuxTravel | Bilet Onayı</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="LuxTravel Logo">
+                    <span>LuxTravel</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="seferler.html">Seferler</a></li>
+                    <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                    <li class="auth-links">
+                        <a href="giris.html" class="btn btn-outline">Giriş Yap</a>
+                        <a href="kayit.html" class="btn btn-primary">Kayıt Ol</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main class="confirmation-page">
+        <div class="container">
+            <!-- Progress Steps -->
+            <div class="booking-steps">
+                <div class="step completed">
+                    <span class="step-number">1</span>
+                    <span class="step-text">Koltuk Seçimi</span>
+                </div>
+                <div class="step completed">
+                    <span class="step-number">2</span>
+                    <span class="step-text">Yolcu Bilgileri</span>
+                </div>
+                <div class="step completed">
+                    <span class="step-number">3</span>
+                    <span class="step-text">Ödeme</span>
+                </div>
+                <div class="step active">
+                    <span class="step-number">4</span>
+                    <span class="step-text">Onay</span>
+                </div>
+            </div>
+
+            <div class="confirmation-content">
+                <div class="confirmation-card success animate__animated animate__fadeIn">
+                    <div class="confirmation-header">
+                        <i class="fas fa-check-circle"></i>
+                        <h1>Rezervasyonunuz Tamamlandı!</h1>
+                        <p>Bilet detaylarınız aşağıda yer almaktadır. Biletiniz e-posta adresinize de gönderilmiştir.</p>
+                    </div>
+                    
+                    <div class="booking-reference">
+                        <span>Rezervasyon No:</span>
+                        <strong>LT-20231215-123456</strong>
+                    </div>
+                    
+                    <div class="ticket-details">
+                        <div class="ticket-header">
+                            <h2>LuxTravel</h2>
+                            <div class="ticket-qr">
+                                <img src="images/qr-code.png" alt="QR Code">
+                            </div>
+                        </div>
+                        
+                        <div class="ticket-body">
+                            <div class="ticket-route">
+                                <div class="from">
+                                    <span class="city">İstanbul</span>
+                                    <span class="station">Esenler Otogarı</span>
+                                    <span class="date">15 Aralık 2023</span>
+                                    <span class="time">08:00</span>
+                                </div>
+                                <div class="duration">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>4 saat 30 dakika</span>
+                                </div>
+                                <div class="to">
+                                    <span class="city">Ankara</span>
+                                    <span class="station">AŞTİ</span>
+                                    <span class="date">15 Aralık 2023</span>
+                                    <span class="time">12:30</span>
+                                </div>
+                            </div>
+                            
+                            <div class="ticket-passengers">
+                                <h3>Yolcu Bilgileri</h3>
+                                <div class="passenger">
+                                    <div class="passenger-info">
+                                        <span class="name">Ahmet Yılmaz</span>
+                                        <span class="seat">Koltuk: 14</span>
+                                    </div>
+                                    <div class="passenger-type">
+                                        <span>Yetişkin</span>
+                                    </div>
+                                </div>
+                                <div class="passenger">
+                                    <div class="passenger-info">
+                                        <span class="name">Ayşe Yılmaz</span>
+                                        <span class="seat">Koltuk: 15</span>
+                                    </div>
+                                    <div class="passenger-type">
+                                        <span>Yetişkin</span>
+                                    </div>
+                                </div>
+                                <div class="passenger">
+                                    <div class="passenger-info">
+                                        <span class="name">Mehmet Yılmaz</span>
+                                        <span class="seat">Koltuk: 16</span>
+                                    </div>
+                                    <div class="passenger-type">
+                                        <span>Çocuk</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="ticket-footer">
+                                <div class="bus-info">
+                                    <span><strong>Plaka:</strong> 34 ABC 123</span>
+                                    <span><strong>Otobüs:</strong> LuxTravel VIP</span>
+                                </div>
+                                <div class="total-price">
+                                    <span>Toplam Tutar:</span>
+                                    <strong>₺765</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="confirmation-actions">
+                        <button class="btn btn-outline" id="print-ticket">
+                            <i class="fas fa-print"></i> Biletimi Yazdır
+                        </button>
+                        <button class="btn btn-primary" id="view-tickets">
+                            <i class="fas fa-ticket-alt"></i> Biletlerim Sayfasına Git
+                        </button>
+                        <a href="index.html" class="btn btn-secondary">
+                            <i class="fas fa-home"></i> Ana Sayfaya Dön
+                        </a>
+                    </div>
+                    
+                    <div class="confirmation-note">
+                        <p><i class="fas fa-info-circle"></i> <strong>Önemli:</strong> Biletinizi yanınızda bulundurmayı unutmayınız. En az 30 dakika önce terminalde olmanız gerekmektedir.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>LuxTravel</h3>
+                    <p>Konforlu ve güvenli seyahat deneyimi için en iyi tercihiniz.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Hızlı Linkler</h3>
+                    <ul>
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="seferler.html">Seferler</a></li>
+                        <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                        <li><a href="iletisim.html">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>İletişim</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Cumhuriyet Mah. No:123, İstanbul</li>
+                        <li><i class="fas fa-phone"></i> 0850 123 45 67</li>
+                        <li><i class="fas fa-envelope"></i> info@luxtravel.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> LuxTravel. Tüm hakları saklıdır.</p>
+                <div class="footer-links">
+                    <a href="#">Gizlilik Politikası</a>
+                    <a href="#">Kullanım Şartları</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/confirmation.js"></script>
+</body>
+</html>

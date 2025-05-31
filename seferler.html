@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxTravel | Sefer Yönetimi</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="admin-panel">
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="admin-logo">
+                <img src="../images/logo-white.png" alt="LuxTravel Admin">
+                <span>LuxTravel</span>
+            </a>
+        </div>
+        
+        <nav class="admin-menu">
+            <ul>
+                <li>
+                    <a href="index.html">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="seferler.html">
+                        <i class="fas fa-bus"></i>
+                        <span>Sefer Yönetimi</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="kullanıcılar.html">
+                        <i class="fas fa-users"></i>
+                        <span>Kullanıcılar</span>
+                    </a>
+                </li>
+                <!-- Diğer menü öğeleri -->
+            </ul>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <a href="../index.html" class="btn btn-outline-light">
+                <i class="fas fa-external-link-alt"></i> Siteye Git
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="admin-main">
+        <!-- Top Navigation -->
+        <header class="admin-header">
+            <div class="header-left">
+                <button class="sidebar-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1>Sefer Yönetimi</h1>
+            </div>
+            
+            <div class="header-right">
+                <!-- Header içeriği -->
+            </div>
+        </header>
+
+        <!-- Page Content -->
+        <main class="admin-content">
+            <div class="container-fluid">
+                <div class="admin-card">
+                    <div class="card-header">
+                        <h2>Tüm Seferler</h2>
+                        <button class="btn btn-primary" id="add-trip-btn">
+                            <i class="fas fa-plus"></i> Yeni Sefer Ekle
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-actions">
+                            <div class="search-box">
+                                <input type="text" placeholder="Sefer ara...">
+                                <button><i class="fas fa-search"></i></button>
+                            </div>
+                            <div class="filters">
+                                <select class="form-select">
+                                    <option>Tüm Seferler</option>
+                                    <option>Aktif Seferler</option>
+                                    <option>Tamamlanan Seferler</option>
+                                    <option>İptal Edilenler</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="table-responsive">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Sefer No</th>
+                                        <th>Güzergah</th>
+                                        <th>Tarih & Saat</th>
+                                        <th>Otobüs</th>
+                                        <th>Kapasite</th>
+                                        <th>Fiyat</th>
+                                        <th>Durum</th>
+                                        <th>İşlemler</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>TR-001</td>
+                                        <td>İstanbul → Ankara</td>
+                                        <td>15.01.2024 08:00</td>
+                                        <td>LuxTravel VIP (34 ABC 123)</td>
+                                        <td>36/36</td>
+                                        <td>₺250</td>
+                                        <td><span class="badge bg-success">Aktif</span></td>
+                                        <td>
+                                            <button class="btn-icon" title="Düzenle">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <button class="btn-icon" title="Sil">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>TR-002</td>
+                                        <td>Ankara → İzmir</td>
+                                        <td>15.01.2024 18:00</td>
+                                        <td>LuxTravel Lüks (06 DEF 456)</td>
+                                        <td>24/36</td>
+                                        <td>₺210</td>
+                                        <td><span class="badge bg-success">Aktif</span></td>
+                                        <td>
+                                            <button class="btn-icon" title="Düzenle">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <button class="btn-icon" title="Sil">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>TR-003</td>
+                                        <td>İzmir → Antalya</td>
+                                        <td>16.01.2024 10:30</td>
+                                        <td>LuxTravel Standart (35 GHI 789)</td>
+                                        <td>12/36</td>
+                                        <td>₺180</td>
+                                        <td><span class="badge bg-success">Aktif</span></td>
+                                        <td>
+                                            <button class="btn-icon" title="Düzenle">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <button class="btn-icon" title="Sil">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="table-footer">
+                            <div class="pagination">
+                                <button class="btn btn-outline" disabled>
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="btn btn-primary">1</button>
+                                <button class="btn btn-outline">2</button>
+                                <button class="btn btn-outline">3</button>
+                                <button class="btn btn-outline">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Add Trip Modal -->
+    <div class="modal" id="add-trip-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Yeni Sefer Ekle</h3>
+                    <button class="close-modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="trip-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="trip-from">Nereden</label>
+                                <select id="trip-from" class="form-select" required>
+                                    <option value="">Seçiniz</option>
+                                    <option value="istanbul">İstanbul</option>
+                                    <option value="ankara">Ankara</option>
+                                    <option value="izmir">İzmir</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="trip-to">Nereye</label>
+                                <select id="trip-to" class="form-select" required>
+                                    <option value="">Seçiniz</option>
+                                    <option value="istanbul">İstanbul</option>
+                                    <option value="ankara">Ankara</option>
+                                    <option value="izmir">İzmir</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="trip-date">Tarih</label>
+                                <input type="date" id="trip-date" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="trip-time">Saat</label>
+                                <input type="time" id="trip-time" class="form-control" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="trip-bus">Otobüs</label>
+                            <select id="trip-bus" class="form-select" required>
+                                <option value="">Seçiniz</option>
+                                <option value="1">LuxTravel VIP (34 ABC 123)</option>
+                                <option value="2">LuxTravel Lüks (06 DEF 456)</option>
+                                <option value="3">LuxTravel Standart (35 GHI 789)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="trip-price">Fiyat (₺)</label>
+                                <input type="number" id="trip-price" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="trip-duration">Süre (dk)</label>
+                                <input type="number" id="trip-duration" class="form-control" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="trip-notes">Notlar</label>
+                            <textarea id="trip-notes" class="form-control" rows="3"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-outline close-modal">İptal</button>
+                    <button class="btn btn-primary">Kaydet</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/admin.js"></script>
+    <script>
+        // Add Trip Modal
+        const addTripBtn = document.getElementById('add-trip-btn');
+        const addTripModal = document.getElementById('add-trip-modal');
+        const closeModalBtns = document.querySelectorAll('.close-modal');
+        
+        if (addTripBtn) {
+            addTripBtn.addEventListener('click', function() {
+                addTripModal.style.display = 'flex';
+            });
+        }
+        
+        closeModalBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                addTripModal.style.display = 'none';
+            });
+        });
+        
+        // Close modal when clicking outside
+        window.addEventListener('click', function(e) {
+            if (e.target === addTripModal) {
+                addTripModal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

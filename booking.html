@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LuxTravel koltuk seçimi - Seçtiğiniz sefer için koltuk rezervasyonu yapın ve yolcu bilgilerinizi girin.">
+    <title>LuxTravel | Koltuk Seçimi</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="LuxTravel Logo">
+                    <span>LuxTravel</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="seferler.html">Seferler</a></li>
+                    <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                    <li class="auth-links">
+                        <a href="giris.html" class="btn btn-outline">Giriş Yap</a>
+                        <a href="kayit.html" class="btn btn-primary">Kayıt Ol</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main class="booking-page">
+        <div class="container">
+            <!-- Progress Steps -->
+            <div class="booking-steps">
+                <div class="step active">
+                    <span class="step-number">1</span>
+                    <span class="step-text">Koltuk Seçimi</span>
+                </div>
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <span class="step-text">Yolcu Bilgileri</span>
+                </div>
+                <div class="step">
+                    <span class="step-number">3</span>
+                    <span class="step-text">Ödeme</span>
+                </div>
+                <div class="step">
+                    <span class="step-number">4</span>
+                    <span class="step-text">Onay</span>
+                </div>
+            </div>
+
+            <div class="booking-content">
+                <!-- Trip Summary -->
+                <section class="trip-summary">
+                    <h2>Sefer Özeti</h2>
+                    <div class="summary-card">
+                        <div class="route">
+                            <span class="from">İstanbul</span>
+                            <i class="fas fa-arrow-right"></i>
+                            <span class="to">Ankara</span>
+                        </div>
+                        <div class="date-time">
+                            <div class="date">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>15 Aralık 2023</span>
+                            </div>
+                            <div class="time">
+                                <i class="far fa-clock"></i>
+                                <span>08:00 - 12:30</span>
+                            </div>
+                        </div>
+                        <div class="bus-type">
+                            <i class="fas fa-bus"></i>
+                            <span>Lüks Otobüs</span>
+                        </div>
+                        <div class="price">
+                            <i class="fas fa-tag"></i>
+                            <span>₺250</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Seat Selection -->
+                <section class="seat-selection">
+                    <h2>Koltuk Seçimi</h2>
+                    <div class="bus-layout-container">
+                        <div class="bus-driver">
+                            <i class="fas fa-user-shield"></i>
+                            <span>Şoför</span>
+                        </div>
+                        <div class="bus-seats" id="bus-seats">
+                            <!-- Seats will be loaded by JavaScript -->
+                        </div>
+                        <div class="bus-toilet">
+                            <i class="fas fa-toilet"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="seat-legend">
+                        <div class="legend-item">
+                            <div class="seat-sample available"></div>
+                            <span>Boş Koltuk</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="seat-sample selected"></div>
+                            <span>Seçilen Koltuk</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="seat-sample booked"></div>
+                            <span>Dolu Koltuk</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="seat-sample female"></div>
+                            <span>Kadın Yolcu</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="seat-sample male"></div>
+                            <span>Erkek Yolcu</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Passenger Info -->
+                <section class="passenger-info">
+                    <h2>Yolcu Bilgileri</h2>
+                    <form id="passenger-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="passenger-name">Ad Soyad</label>
+                                <input type="text" id="passenger-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="passenger-tc">TC Kimlik No</label>
+                                <input type="text" id="passenger-tc" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="passenger-phone">Telefon</label>
+                                <input type="tel" id="passenger-phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="passenger-email">E-posta</label>
+                                <input type="email" id="passenger-email" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="passenger-gender">Cinsiyet</label>
+                                <select id="passenger-gender" required>
+                                    <option value="">Seçiniz</option>
+                                    <option value="female">Kadın</option>
+                                    <option value="male">Erkek</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="passenger-birthdate">Doğum Tarihi</label>
+                                <input type="date" id="passenger-birthdate" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="special-requests">Özel İstekler (Opsiyonel)</label>
+                            <textarea id="special-requests" rows="3"></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-outline" id="back-to-trips">Seferlere Dön</button>
+                            <button type="submit" class="btn btn-primary">Ödemeye Geç</button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>LuxTravel</h3>
+                    <p>Konforlu ve güvenli seyahat deneyimi için en iyi tercihiniz.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Hızlı Linkler</h3>
+                    <ul>
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="seferler.html">Seferler</a></li>
+                        <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                        <li><a href="iletisim.html">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>İletişim</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Cumhuriyet Mah. No:123, İstanbul</li>
+                        <li><i class="fas fa-phone"></i> 0850 123 45 67</li>
+                        <li><i class="fas fa-envelope"></i> info@luxtravel.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> LuxTravel. Tüm hakları saklıdır.</p>
+                <div class="footer-links">
+                    <a href="#">Gizlilik Politikası</a>
+                    <a href="#">Kullanım Şartları</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/booking.js"></script>
+</body>
+</html>

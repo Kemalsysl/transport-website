@@ -1,0 +1,1747 @@
+/* Global Styles */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+    --text-color: #333;
+    --text-light: #7f8c8d;
+    --white: #fff;
+    --black: #000;
+    --success-color: #2ecc71;
+    --warning-color: #f39c12;
+    --danger-color: #e74c3c;
+    --border-radius: 4px;
+    --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #f5f5f5;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
+}
+
+.btn-outline:hover {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+.btn-large {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+}
+
+/* Header */
+.main-header {
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.main-nav ul {
+    display: flex;
+    align-items: center;
+}
+
+.main-nav li {
+    margin-left: 20px;
+}
+
+.main-nav a {
+    font-weight: 600;
+    padding: 5px 0;
+    position: relative;
+}
+
+.main-nav a.active {
+    color: var(--secondary-color);
+}
+
+.main-nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--secondary-color);
+}
+
+.auth-links .btn {
+    margin-left: 10px;
+}
+
+.mobile-menu-btn {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    height: 80vh; /* Yüksekliği ekranın %80'i kadar yapar */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/banner\ 1.PNG');
+    background-size: cover; /* Görseli alanı kaplayacak şekilde ayarlar */
+    background-position: center; /* Ortalar */
+    color: var(--white); /* Yazı rengini (muhtemelen beyaz) yapar */
+    display: flex;
+    align-items: center; /* İçeriği dikeyde ortalar */
+    text-align: center; /* İçeriği ortalar */
+    margin-top: 70px; /* Üst boşluk (muhtemelen navbar için) */
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Koyu bir filtre (isteğe bağlı) */
+    z-index: -1;
+}
+
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Search Section */
+.search-section {
+    background-color: var(--white);
+    padding: 30px 0;
+    margin-top: -50px;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    position: relative;
+    z-index: 100;
+}
+
+#trip-search-form {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    align-items: end;
+}
+
+.form-group {
+    margin-bottom: 0;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group select,
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+}
+
+/* Popular Routes */
+.popular-routes {
+    padding: 80px 0;
+}
+
+.popular-routes h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.routes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.route-card {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.route-info {
+    margin-bottom: 20px;
+}
+
+.route-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.route-info p {
+    color: var(--text-light);
+    margin-bottom: 15px;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+/* Features */
+.features {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+}
+
+.features h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+}
+
+.feature-card i {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+/* Footer */
+.main-footer {
+    background-color: var(--dark-color);
+    color: var(--white);
+    padding: 60px 0 0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.footer-col h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-col h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--secondary-color);
+}
+
+.footer-col p {
+    margin-bottom: 20px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: var(--white);
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li i {
+    margin-right: 10px;
+    color: var(--secondary-color);
+    width: 20px;
+    text-align: center;
+}
+
+.footer-bottom {
+    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links a {
+    color: var(--white);
+    margin-left: 20px;
+    font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+    color: var(--secondary-color);
+}
+/* Trips Page */
+.trips-page {
+    padding-top: 30px;
+}
+
+.search-section h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+}
+
+/* Filters Section */
+.filters-section {
+    background-color: var(--white);
+    padding: 20px 0;
+    margin: 20px 0;
+    box-shadow: var(--box-shadow);
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.filter-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+.filter-group h3 {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    color: var(--text-light);
+}
+
+.filter-btn {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+}
+
+.filter-btn.active {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    border-color: var(--secondary-color);
+}
+
+.price-range {
+    margin-top: 10px;
+}
+
+.price-range input[type="range"] {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.price-range span {
+    display: block;
+    text-align: center;
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+/* Trips List */
+.sort-options {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.sort-options span {
+    margin-right: 10px;
+    font-weight: 600;
+}
+
+.sort-options select {
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    background-color: var(--white);
+}
+
+.trips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.trip-card {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.trip-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.trip-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.trip-header h3 {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.trip-header .price {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.trip-details {
+    padding: 20px;
+}
+
+.time-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.departure, .arrival {
+    text-align: center;
+}
+
+.departure span, .arrival span {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 5px;
+}
+
+.departure strong, .arrival strong {
+    font-size: 1.3rem;
+}
+
+.duration {
+    text-align: center;
+    flex: 1;
+    padding: 0 10px;
+}
+
+.duration span {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.duration .line {
+    height: 2px;
+    background-color: #ddd;
+    margin: 10px 0;
+    position: relative;
+}
+
+.duration .line::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+}
+
+.duration .line::after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    right: 0;
+    width: 8px;
+    height: 8px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+}
+
+.bus-type {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: var(--border-radius);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.bus-type.standard {
+    background-color: #f1f1f1;
+    color: #666;
+}
+
+.bus-type.luxury {
+    background-color: #e3f2fd;
+    color: #1976d2;
+}
+
+.bus-type.vip {
+    background-color: #fff8e1;
+    color: #ff8f00;
+}
+
+.amenities {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+}
+
+.amenities i {
+    font-size: 1.2rem;
+}
+
+.seats-available {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.seats-available i {
+    color: var(--success-color);
+}
+
+.trip-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    border-top: 1px solid #eee;
+}
+
+.trip-footer .btn {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+}
+
+.no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px;
+    font-size: 1.2rem;
+    color: var(--text-light);
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.page-numbers {
+    display: flex;
+    gap: 5px;
+}
+
+.page-numbers button {
+    min-width: 40px;
+}
+/* Booking Page */
+.booking-page {
+    padding: 30px 0 60px;
+}
+
+.booking-steps {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.booking-steps::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #eee;
+    z-index: 1;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    flex: 1;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #eee;
+    color: #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    margin-bottom: 10px;
+    border: 3px solid white;
+}
+
+.step-text {
+    font-size: 0.9rem;
+    color: #999;
+    text-align: center;
+}
+
+.step.active .step-number {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.step.active .step-text {
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.step.completed .step-number {
+    background-color: var(--success-color);
+    color: white;
+}
+
+.step.completed .step-text {
+    color: var(--success-color);
+}
+
+.booking-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+}
+
+.trip-summary {
+    margin-bottom: 30px;
+}
+
+.trip-summary h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.summary-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+}
+
+.route {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.route i {
+    color: var(--secondary-color);
+}
+
+.date-time {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.date, .time, .bus-type, .price {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.date i, .time i, .bus-type i, .price i {
+    color: var(--secondary-color);
+}
+
+/* Seat Selection */
+.seat-selection {
+    margin-bottom: 30px;
+}
+
+.seat-selection h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.bus-layout-container {
+    background-color: #f5f5f5;
+    border-radius: var(--border-radius);
+    padding: 30px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.bus-driver {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    color: var(--primary-color);
+}
+
+.bus-driver i {
+    font-size: 1.5rem;
+}
+
+.bus-seats {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 40px;
+}
+
+.seat-row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.seat {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    transition: var(--transition);
+}
+
+.seat span {
+    position: relative;
+    z-index: 1;
+    font-weight: 600;
+    color: white;
+}
+
+.seat::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background-color: var(--secondary-color);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.seat.available {
+    background-color: #d1e7dd;
+}
+
+.seat.available::before {
+    opacity: 0;
+}
+
+.seat.available:hover::before {
+    opacity: 0.3;
+}
+
+.seat.selected {
+    background-color: var(--secondary-color);
+}
+
+.seat.selected::before {
+    opacity: 1;
+}
+
+.seat.booked {
+    background-color: #f8d7da;
+    cursor: not-allowed;
+}
+
+.seat.female {
+    background-color: #f1d4e5;
+}
+
+.seat.male {
+    background-color: #cfe2ff;
+}
+
+.seat.aisle {
+    margin-right: 40px;
+}
+
+.seat.aisle::after {
+    content: '';
+    position: absolute;
+    right: -25px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 40px;
+    background-color: #ddd;
+}
+
+.bus-toilet {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.seat-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.seat-sample {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+}
+
+.seat-sample.available {
+    background-color: #d1e7dd;
+}
+
+.seat-sample.selected {
+    background-color: var(--secondary-color);
+}
+
+.seat-sample.booked {
+    background-color: #f8d7da;
+}
+
+.seat-sample.female {
+    background-color: #f1d4e5;
+}
+
+.seat-sample.male {
+    background-color: #cfe2ff;
+}
+
+/* Passenger Info */
+.passenger-info h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+#passenger-form {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 30px;
+}
+/* Payment Page */
+.payment-page {
+    padding: 30px 0 60px;
+}
+
+.payment-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+}
+
+.order-summary {
+    margin-bottom: 30px;
+}
+
+.order-summary h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.summary-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+}
+
+.trip-info {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.route {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.route i {
+    color: var(--secondary-color);
+}
+
+.date-time {
+    display: flex;
+    justify-content: space-between;
+}
+
+.date, .time {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.date i, .time i {
+    color: var(--secondary-color);
+}
+
+.passenger-info h3, .seats-info h3, .price-summary h3 {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+.passenger-details p {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.selected-seats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.seat-number {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: var(--light-color);
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.price-summary {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.price-row.total {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+
+/* Payment Methods */
+.payment-methods h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.payment-options {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+}
+
+.payment-tabs {
+    display: flex;
+    border-bottom: 1px solid #eee;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-light);
+    border-bottom: 3px solid transparent;
+    transition: var(--transition);
+}
+
+.tab-btn.active {
+    color: var(--secondary-color);
+    border-bottom-color: var(--secondary-color);
+}
+
+.tab-content {
+    padding: 20px;
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.card-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.card-icons img {
+    height: 25px;
+}
+
+.form-group.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.form-group.checkbox input {
+    width: auto;
+}
+
+.form-group.checkbox label {
+    margin-bottom: 0;
+    font-weight: normal;
+}
+
+.form-group i.fa-question-circle {
+    color: var(--text-light);
+    margin-left: 5px;
+    cursor: help;
+}
+
+.bank-transfer-info, .mobile-payment-info {
+    padding: 20px 0;
+}
+
+.bank-details {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    margin: 15px 0;
+}
+
+.bank-details p {
+    margin-bottom: 10px;
+}
+
+.note {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 20px;
+}
+
+.mobile-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.mobile-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    background: none;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.mobile-option:hover {
+    border-color: var(--secondary-color);
+}
+
+.mobile-option img {
+    height: 30px;
+}
+
+/* Confirmation Page */
+.confirmation-page {
+    padding: 30px 0 60px;
+}
+
+.confirmation-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.confirmation-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 30px;
+    text-align: center;
+}
+
+.confirmation-header i {
+    font-size: 4rem;
+    color: var(--success-color);
+    margin-bottom: 20px;
+}
+
+.confirmation-header h1 {
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.confirmation-header p {
+    color: var(--text-light);
+    margin-bottom: 30px;
+}
+
+.booking-reference {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+.booking-reference strong {
+    color: var(--secondary-color);
+    font-size: 1.3rem;
+}
+
+.ticket-details {
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    margin-bottom: 30px;
+    text-align: left;
+    overflow: hidden;
+}
+
+.ticket-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.ticket-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.ticket-qr img {
+    height: 80px;
+    width: 80px;
+}
+
+.ticket-body {
+    padding: 20px;
+}
+
+.ticket-route {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.from, .to {
+    flex: 1;
+}
+
+.from {
+    text-align: left;
+}
+
+.to {
+    text-align: right;
+}
+
+.city {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.station, .date, .time {
+    display: block;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.duration {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.duration i {
+    font-size: 1.5rem;
+}
+
+.ticket-passengers {
+    margin-bottom: 20px;
+}
+
+.ticket-passengers h3 {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.passenger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.passenger-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.passenger-info .name {
+    font-weight: 600;
+}
+
+.passenger-info .seat {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.passenger-type {
+    background-color: #f1f1f1;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.ticket-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.bus-info {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.bus-info span {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.total-price {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.total-price strong {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+}
+
+.confirmation-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.confirmation-actions .btn {
+    min-width: 200px;
+}
+
+.confirmation-actions .btn i {
+    margin-right: 8px;
+}
+
+.confirmation-note {
+    background-color: #fff3cd;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    text-align: left;
+}
+
+.confirmation-note i {
+    color: #ffc107;
+    margin-right: 10px;
+}
+
+/* Print Styles */
+@media print {
+    .main-header, .main-footer, .booking-steps, .confirmation-actions {
+        display: none !important;
+    }
+    
+    .confirmation-page {
+        padding: 0;
+    }
+    
+    .confirmation-card {
+        box-shadow: none;
+        padding: 0;
+    }
+    
+    .ticket-details {
+        border: none;
+    }
+}
+/* Tickets Page */
+.tickets-page {
+    padding: 30px 0;
+}
+
+.page-header {
+    margin-bottom: 30px;
+}
+
+.page-header h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.tabs {
+    display: flex;
+    border-bottom: 1px solid #eee;
+}
+
+.tab-btn {
+    padding: 10px 20px;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    font-weight: 600;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.tab-btn.active {
+    color: var(--secondary-color);
+    border-bottom-color: var(--secondary-color);
+}
+
+.ticket-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.ticket-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #eee;
+}
+
+.ticket-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.ticket-number {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.ticket-date {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.ticket-status {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.ticket-status.active {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.ticket-status.warning {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.ticket-status.cancelled {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.ticket-body {
+    padding: 20px;
+}
+
+.trip-info {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.route {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.from, .to {
+    flex: 1;
+}
+
+.from {
+    text-align: left;
+}
+
+.to {
+    text-align: right;
+}
+
+.city {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.station, .time {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.duration {
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.bus-info {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.bus-info i {
+    margin-right: 5px;
+}
+
+.passenger-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.passenger-count, .seats {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.9rem;
+}
+
+.price-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.payment-method {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.payment-method i {
+    margin-right: 5px;
+}
+
+.ticket-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 15px 20px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #eee;
+}
+
+.no-tickets {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.no-tickets i {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.no-tickets h3 {
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.no-tickets p {
+    color: var(--text-light);
+    margin-bottom: 20px;
+}
+
+.alert {
+    padding: 15px;
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+/* Auth Note */
+.auth-note {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: var(--border-radius);
+    font-size: 0.9rem;
+    color: var(--text-light);
+}

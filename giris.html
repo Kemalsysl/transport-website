@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LuxTravel giriş sayfası - Hesabınıza giriş yapın ve biletlerinizi yönetin.">
+    <title>LuxTravel | Giriş Yap</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="auth-page">
+    <header class="auth-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="LuxTravel Logo">
+                    <span>LuxTravel</span>
+                </a>
+            </div>
+            <div class="auth-switch">
+                Hesabınız yok mu? <a href="kayit.html">Kayıt Olun</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="auth-main">
+        <div class="container">
+            <div class="auth-card">
+                <h1>Hesabınıza Giriş Yapın</h1>
+                <p>Biletlerinizi görüntülemek ve yeni rezervasyonlar yapmak için giriş yapın.</p>
+                
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="login-email">E-posta Adresi</label>
+                        <input type="email" id="login-email" placeholder="ornek@email.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="login-password">Şifre</label>
+                        <div class="password-input">
+                            <input type="password" id="login-password" placeholder="Şifreniz" required>
+                            <button type="button" class="toggle-password">
+                                <i class="far fa-eye"></i>
+                            </button>
+                        </div>
+                        <a href="sifre-sifirla.html" class="forgot-password">Şifremi Unuttum?</a>
+                    </div>
+                    
+                    <div class="form-group checkbox">
+                        <input type="checkbox" id="remember-me" checked>
+                        <label for="remember-me">Beni Hatırla</label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-block">Giriş Yap</button>
+                    
+                    <div class="social-login">
+                        <p>Veya sosyal medya hesabınızla giriş yapın</p>
+                        <div class="social-buttons">
+                            <button type="button" class="btn btn-social google">
+                                <i class="fab fa-google"></i> Google
+                            </button>
+                            <button type="button" class="btn btn-social facebook">
+                                <i class="fab fa-facebook-f"></i> Facebook
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="auth-footer">
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> LuxTravel. Tüm hakları saklıdır.</p>
+            <div class="footer-links">
+                <a href="#">Gizlilik Politikası</a>
+                <a href="#">Kullanım Şartları</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/auth.js"></script>
+</body>
+</html>

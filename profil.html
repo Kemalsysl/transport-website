@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LuxTravel profil sayfası - Hesap bilgilerinizi yönetin ve bilet geçmişinizi görüntüleyin.">
+    <title>LuxTravel | Profilim</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="LuxTravel Logo">
+                    <span>LuxTravel</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="seferler.html">Seferler</a></li>
+                    <li><a href="biletlerim.html">Biletlerim</a></li>
+                    <li class="auth-links">
+                        <a href="profil.html" class="btn btn-outline">
+                            <i class="far fa-user"></i> Profilim
+                        </a>
+                        <button class="btn btn-primary" id="logout-btn">
+                            <i class="fas fa-sign-out-alt"></i> Çıkış Yap
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main class="profile-page">
+        <div class="container">
+            <div class="profile-sidebar">
+                <div class="profile-header">
+                    <div class="avatar">
+                        <img src="images/avatar.jpg" alt="Profil Fotoğrafı">
+                        <button class="edit-avatar">
+                            <i class="fas fa-camera"></i>
+                        </button>
+                    </div>
+                    <h2>Ahmet Yılmaz</h2>
+                    <p class="email">ahmet@example.com</p>
+                    <p class="member-since">
+                        <i class="far fa-calendar-alt"></i> Üyelik tarihi: 15 Haz 2023
+                    </p>
+                </div>
+                
+                <nav class="profile-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="profil.html">
+                                <i class="far fa-user"></i> Profil Bilgileri
+                            </a>
+                        </li>
+                        <li>
+                            <a href="biletlerim.html">
+                                <i class="far fa-ticket-alt"></i> Biletlerim
+                            </a>
+                        </li>
+                        <li>
+                            <a href="favoriler.html">
+                                <i class="far fa-heart"></i> Favori Rotalar
+                            </a>
+                        </li>
+                        <li>
+                            <a href="sifre-degistir.html">
+                                <i class="far fa-lock"></i> Şifre Değiştir
+                            </a>
+                        </li>
+                        <li>
+                            <a href="bildirimler.html">
+                                <i class="far fa-bell"></i> Bildirimler
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <div class="profile-content">
+                <div class="profile-section">
+                    <h2>Profil Bilgileri</h2>
+                    <form id="profile-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="profile-firstname">Ad</label>
+                                <input type="text" id="profile-firstname" value="Ahmet" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="profile-lastname">Soyad</label>
+                                <input type="text" id="profile-lastname" value="Yılmaz" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="profile-email">E-posta Adresi</label>
+                            <input type="email" id="profile-email" value="ahmet@example.com" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="profile-phone">Telefon Numarası</label>
+                                <input type="tel" id="profile-phone" value="05551234567" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="profile-birthdate">Doğum Tarihi</label>
+                                <input type="date" id="profile-birthdate" value="1990-01-15">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="profile-gender">Cinsiyet</label>
+                            <select id="profile-gender">
+                                <option value="">Seçiniz</option>
+                                <option value="male" selected>Erkek</option>
+                                <option value="female">Kadın</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="profile-tc">TC Kimlik No</label>
+                            <input type="text" id="profile-tc" value="12345678901" required>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-outline">İptal</button>
+                            <button type="submit" class="btn btn-primary">Değişiklikleri Kaydet</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="profile-section">
+                    <h2>Adres Bilgileri</h2>
+                    <div class="address-cards">
+                        <div class="address-card">
+                            <div class="address-header">
+                                <h3>Ev Adresi</h3>
+                                <div class="address-actions">
+                                    <button class="btn-icon edit-address">
+                                        <i class="far fa-edit"></i>
+                                    </button>
+                                    <button class="btn-icon delete-address">
+                                        <i class="far fa-trash-alt"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="address-body">
+                                <p>Atatürk Mah. Cumhuriyet Cad. No:123 D:5</p>
+                                <p>Kadıköy / İstanbul</p>
+                                <p>34758</p>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-outline add-address">
+                            <i class="fas fa-plus"></i> Yeni Adres Ekle
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="profile-section">
+                    <h2>Hesap Ayarları</h2>
+                    <div class="settings-options">
+                        <div class="setting-option">
+                            <div class="setting-info">
+                                <h3>E-posta Bildirimleri</h3>
+                                <p>Kampanya ve bilet bilgileri için e-posta almak istiyorum</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        
+                        <div class="setting-option">
+                            <div class="setting-info">
+                                <h3>SMS Bildirimleri</h3>
+                                <p>Bilet bilgileri ve hatırlatmalar için SMS almak istiyorum</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        
+                        <div class="setting-option">
+                            <div class="setting-info">
+                                <h3>Hesabı Sil</h3>
+                                <p>Hesabınızı ve tüm verilerinizi kalıcı olarak silin</p>
+                            </div>
+                            <button class="btn btn-danger">Hesabı Sil</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>LuxTravel</h3>
+                    <p>Konforlu ve güvenli seyahat deneyimi için en iyi tercihiniz.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Hızlı Linkler</h3>
+                    <ul>
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="seferler.html">Seferler</a></li>
+                        <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                        <li><a href="iletisim.html">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>İletişim</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Cumhuriyet Mah. No:123, İstanbul</li>
+                        <li><i class="fas fa-phone"></i> 0850 123 45 67</li>
+                        <li><i class="fas fa-envelope"></i> info@luxtravel.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> LuxTravel. Tüm hakları saklıdır.</p>
+                <div class="footer-links">
+                    <a href="#">Gizlilik Politikası</a>
+                    <a href="#">Kullanım Şartları</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/profile.js"></script>
+</body>
+</html>

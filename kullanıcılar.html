@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxTravel | Kullanıcı Yönetimi</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="admin-panel">
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="admin-logo">
+                <img src="../images/logo-white.png" alt="LuxTravel Admin">
+                <span>LuxTravel</span>
+            </a>
+        </div>
+        
+        <nav class="admin-menu">
+            <ul>
+                <li>
+                    <a href="index.html">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="seferler.html">
+                        <i class="fas fa-bus"></i>
+                        <span>Sefer Yönetimi</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="kullanıcılar.html">
+                        <i class="fas fa-users"></i>
+                        <span>Kullanıcılar</span>
+                    </a>
+                </li>
+                <!-- Diğer menü öğeleri -->
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="admin-main">
+        <!-- Top Navigation -->
+        <header class="admin-header">
+            <div class="header-left">
+                <button class="sidebar-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1>Kullanıcı Yönetimi</h1>
+            </div>
+            
+            <div class="header-right">
+                <!-- Header içeriği -->
+            </div>
+        </header>
+
+        <!-- Page Content -->
+        <main class="admin-content">
+            <div class="container-fluid">
+                <div class="admin-card">
+                    <div class="card-header">
+                        <h2>Tüm Kullanıcılar</h2>
+                        <div class="header-actions">
+                            <button class="btn btn-outline" id="export-users">
+                                <i class="fas fa-file-export"></i> Dışa Aktar
+                            </button>
+                            <button class="btn btn-primary" id="add-user-btn">
+                                <i class="fas fa-plus"></i> Yeni Kullanıcı
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-actions">
+                            <div class="search-box">
+                                <input type="text" placeholder="Kullanıcı ara...">
+                                <button><i class="fas fa-search"></i></button>
+                            </div>
+                            <div class="filters">
+                                <select class="form-select">
+                                    <option>Tüm Kullanıcılar</option>
+                                    <option>Aktif Kullanıcılar</option>
+                                    <option>Yeni Kayıtlar</option>
+                                    <option>Engellenenler</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="table-responsive">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <input type="checkbox" id="select-all">
+                                        </th>
+                                        <th>Kullanıcı</th>
+                                        <th>E-posta</th>
+                                        <th>Telefon</th>
+                                        <th>Kayıt Tarihi</th>
+                                        <th>Son Giriş</th>
+                                        <th>Durum</th>
+                                        <th>İşlemler</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>
+                                            <div class="user-info">
+                                                <img src="../images/user-1.jpg" alt="Ahmet Yılmaz">
+                                                <div>
+                                                    <h4>Ahmet Yılmaz</h4>
+                                                    <span>ID: LT001</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>ahmet@example.com</td>
+                                        <td>05551234567</td>
+                                        <td>15.06.2023</td>
+                                        <td>10.01.2024</td>
+                                        <td><span class="badge bg-success">Aktif</span></td>
+                                        <td>
+                                            <button class="btn-icon" title="Düzenle">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <button class="btn-icon" title="Engelle">
+                                                <i class="fas fa-ban"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>
+                                            <div class="user-info">
+                                                <img src="../images/user-2.jpg" alt="Ayşe Kaya">
+                                                <div>
+                                                    <h4>Ayşe Kaya</h4>
+                                                    <span>ID: LT002</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>ayse@example.com</td>
+                                        <td>05552345678</td>
+                                        <td>20.07.2023</td>
+                                        <td>05.01.2024</td>
+                                        <td><span class="badge bg-success">Aktif</span></td>
+                                        <td>
+                                            <button class="btn-icon" title="Düzenle">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <button class="btn-icon" title="Engelle">
+                                                <i class="fas fa-ban"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>
+                                            <div class="user-info">
+                                                <img src="../images/user-3.jpg" alt="Mehmet Demir">
+                                                <div>
+                                                    <h4>Mehmet Demir</h4>
+                                                    <span>ID: LT003</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>mehmet@example.com</td>
+                                        <td>05553456789</td>
+                                        <td>10.08.2023</td>
+                                        <td>30.12.2023</td>
+                                        <td><span class="badge bg-danger">Engelli</span></td>
+                                        <td>
+                                            <button class="btn-icon" title="Düzenle">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <button class="btn-icon" title="Aktif Et">
+                                                <i class="fas fa-check"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="table-footer">
+                            <div class="bulk-actions">
+                                <select class="form-select">
+                                    <option>Toplu İşlem</option>
+                                    <option>Aktif Et</option>
+                                    <option>Engelle</option>
+                                    <option>Sil</option>
+                                </select>
+                                <button class="btn btn-outline">Uygula</button>
+                            </div>
+                            
+                            <div class="pagination">
+                                <button class="btn btn-outline" disabled>
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="btn btn-primary">1</button>
+                                <button class="btn btn-outline">2</button>
+                                <button class="btn btn-outline">3</button>
+                                <button class="btn btn-outline">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Add User Modal -->
+    <div class="modal" id="add-user-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Yeni Kullanıcı Ekle</h3>
+                    <button class="close-modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="user-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="user-firstname">Ad</label>
+                                <input type="text" id="user-firstname" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="user-lastname">Soyad</label>
+                                <input type="text" id="user-lastname" class="form-control" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="user-email">E-posta</label>
+                            <input type="email" id="user-email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="user-phone">Telefon</label>
+                            <input type="tel" id="user-phone" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="user-password">Şifre</label>
+                                <input type="password" id="user-password" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="user-confirm-password">Şifre Tekrar</label>
+                                <input type="password" id="user-confirm-password" class="form-control" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="user-status">Durum</label>
+                            <select id="user-status" class="form-control">
+                                <option value="active">Aktif</option>
+                                <option value="inactive">Pasif</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="user-role">Rol</label>
+                            <select id="user-role" class="form-control">
+                                <option value="user">Standart Kullanıcı</option>
+                                <option value="agent">Satış Temsilcisi</option>
+                                <option value="admin">Yönetici</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-outline close-modal">İptal</button>
+                    <button class="btn btn-primary">Kullanıcı Ekle</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+    <script>
+        // User Management Scripts
+        document.getElementById('add-user-btn').addEventListener('click', function() {
+            document.getElementById('add-user-modal').style.display = 'flex';
+        });
+        
+        document.querySelectorAll('.close-modal').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.getElementById('add-user-modal').style.display = 'none';
+            });
+        });
+        
+        // Select all checkbox
+        document.getElementById('select-all').addEventListener('change', function() {
+            const checkboxes = document.querySelectorAll('tbody input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = this.checked;
+            });
+        });
+        
+        // Phone number formatting
+        document.getElementById('user-phone').addEventListener('input', function(e) {
+            let value = this.value.replace(/\D/g, '');
+            if (value.length > 0) {
+                value = value.substring(0, 10);
+                value = value.replace(/(\d{1})(\d{3})(\d{3})(\d{2})(\d{2})/, '$1$2 $3 $4 $5');
+            }
+            this.value = value;
+        });
+    </script>
+</body>
+</html>
